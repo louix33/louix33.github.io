@@ -8,15 +8,10 @@ export default defineUserConfig({
         title: 'Louis\' Blog',
         description: 'Louis\' Blog',
       },
-      '/en/': {
-        lang: 'en-US',
-        title: 'Louis\' Blog',
-        description: 'Louis\' Blog',
-      },
       '/zh/': {
         lang: 'zh-CN',
-        title: 'Louis的博客',
-        description: 'Louis的博客',
+        title: '路易十三的博客',
+        description: '路易十三的博客',
       },
     },
   })
