@@ -1,6 +1,6 @@
 # 在 GitHub Pages 上部署 VuePress
 
-作为本人博客的第一篇文章，本文将介绍如何在 GitHub Pages 上部署 VuePress 静态网站。这也是本网站的部署方式。本文内容整理自 [VuePress](https://v2.vuepress.vuejs.org/guide/) 和 [GitHub Pages](https://docs.github.com/en/pages) 的官方文档，并结合了一些个人经验。本人完全不了解 Vue、JavaScript 等前端技术，也希望借此了解一下相关知识。
+作为本人博客的第一篇文章，本文将介绍如何在 GitHub Pages 上部署 VuePress 静态网站。这也是本网站的部署方式。本文内容整理自 [VuePress](https://v2.vuepress.vuejs.org/guide/) 和 [GitHub Pages](https://docs.github.com/en/pages/) 的官方文档，并结合了一些个人经验。本人完全不了解 Vue、JavaScript 等前端技术，也希望借此了解一下相关知识。
 
 ## 写在前面
 
@@ -94,7 +94,7 @@ echo '# Hello VuePress' > docs/index.md
 pnpm docs:dev
 ```
 
-开发服务器会监听本地的8080端口。在浏览器中打开 http://localhost:8080，如果一切顺利，你就可以看到刚刚创建的 "Hello VuePress" 页面了。你随时可以按 Ctrl+C 关闭这个服务器。
+开发服务器会监听本地的8080端口。在浏览器中打开 http://localhost:8080/，如果一切顺利，你就可以看到刚刚创建的 "Hello VuePress" 页面了。你随时可以按 Ctrl+C 关闭这个服务器。
 
 ## 部署至 GitHub Pages
 
@@ -158,7 +158,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-每次 push 到 main 分支时，该 workflow 就会被触发（也可以手动触发）。执行的操作是：在云端配置好 VuePress 所需要的环境，再执行 VuePress 的构建操作，编译 main 分支下的 Markdown 文档；随后，将编译好的静态资源（默认在`docs/.vuepress/dist`目录下）push到 gh-pages 分支。
+每次 push 到 main 分支时，该 workflow 就会被触发（也可以手动触发）。执行的操作是：在云端配置好 VuePress 所需要的环境，再执行 VuePress 的构建操作，编译 main 分支下的 Markdown 文档；随后，将编译好的静态资源（默认在`docs/.vuepress/dist/`目录下）push到 gh-pages 分支。
 
 将本地修改 push 到 GitHub，你会在 GitHub 仓库的 Action 标签下看到我们创建的 workflow，名字叫做 "Build Docs"，并且它已经开始自动执行了！如果没有，你可以手动执行。
 
