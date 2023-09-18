@@ -1,4 +1,4 @@
-# 在GitHub Pages上部署VuePress
+# 在 GitHub Pages 上部署 VuePress
 
 作为本人博客的第一篇文章，本文将介绍如何在 GitHub Pages 上部署 VuePress 静态网站。这也是本网站的部署方式。本文内容整理自 [VuePress](https://v2.vuepress.vuejs.org/guide/) 和 [GitHub Pages](https://docs.github.com/en/pages) 的官方文档，并结合了一些个人经验。本人完全不了解 Vue、JavaScript 等前端技术，也希望借此了解一下相关知识。
 
@@ -96,11 +96,11 @@ pnpm docs:dev
 
 开发服务器会监听本地的8080端口。在浏览器中打开 http://localhost:8080，如果一切顺利，你就可以看到刚刚创建的 "Hello VuePress" 页面了。你随时可以按 Ctrl+C 关闭这个服务器。
 
-## 部署至GitHub Pages
+## 部署至 GitHub Pages
 
 GitHub Pages 并未内建对 VuePress 的支持，因此我们需要通过 GitHub Action 提供的 workflow 来实现自动化构建和部署。
 
-### Workflow脚本
+### Workflow 脚本
 
 创建`.github/workflows/docs.yml`，该 YAML 文件描述了 workflow 的触发条件、触发时执行的任务和流程等。可以参考下面的示例：
 
