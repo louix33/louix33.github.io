@@ -6,12 +6,12 @@ export default defineUserConfig({
       '/': {
         lang: 'en-US',
         title: 'Louis\'s Skyhouse',
-        description: 'Vacant',
+        description: 'just for fun ^_^',
       },
       '/zh/': {
         lang: 'zh-CN',
         title: '路易十三的空中小屋',
-        description: 'Vacant',
+        description: 'just for fun ^_^',
       },
     },
   })
