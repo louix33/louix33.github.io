@@ -5,13 +5,13 @@ export default defineUserConfig({
     locales: {
       '/': {
         lang: 'en-US',
-        title: 'Louis\' Blog',
-        description: 'Louis\' Blog',
+        title: 'Louis\'s Skyhouse',
+        description: 'Vacant',
       },
       '/zh/': {
         lang: 'zh-CN',
-        title: '路易十三的博客',
-        description: '路易十三的博客',
+        title: '路易十三的空中小屋',
+        description: 'Vacant',
       },
     },
   })
