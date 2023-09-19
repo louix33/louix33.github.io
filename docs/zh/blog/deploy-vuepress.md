@@ -1,6 +1,6 @@
 # 在 GitHub Pages 上部署 VuePress
 
-作为本人博客的第一篇文章，本文将介绍如何在 GitHub Pages 上部署 VuePress 静态网站。这也是本网站的部署方式。本文内容整理自 [VuePress](https://v2.vuepress.vuejs.org/guide/) 和 [GitHub Pages](https://docs.github.com/en/pages/) 的官方文档，并结合了一些个人经验。本人完全不了解 Vue、JavaScript 等前端技术，也希望借此了解一下相关知识。
+本文将介绍如何在 GitHub Pages 上部署 VuePress 静态网站。这也是本网站的部署方式。本文内容整理自 [VuePress](https://v2.vuepress.vuejs.org/guide) 和 [GitHub Pages](https://docs.github.com/en/pages) 的官方文档，并结合了一些个人经验。本人完全不了解 Vue、JavaScript 等前端技术，也希望借此了解一下相关知识。
 
 ## 写在前面
 
@@ -26,7 +26,7 @@
 
 为方便调试，需要在本地安装 Node.js 及其包管理工具（pnpm / npm / yarn），并通过包管理工具安装 VuePress。本文以 Debian Bookworm 上安装 Node.js 18、pnpm、VuePress v2.x 为例。
 
-安装Node.js：
+安装 Node.js：
 
 ```sh
 # 导入GPG key
@@ -88,13 +88,13 @@ mkdir docs
 echo '# Hello VuePress' > docs/index.md
 ```
 
-至此，我们搭建好了一个只有一个页面（即上面创建的`index.md`）的 VuePress 网站。在本地启动一个热重载的开发服务器，看看它长什么样子：
+至此，我们搭建好了一个只有一个页面（`index.md`）的 VuePress 网站。在本地启动一个热重载的开发服务器，看看它长什么样子：
 
 ```sh
 pnpm docs:dev
 ```
 
-开发服务器会监听本地的8080端口。在浏览器中打开 http://localhost:8080/，如果一切顺利，你就可以看到刚刚创建的 "Hello VuePress" 页面了。你随时可以按 Ctrl+C 关闭这个服务器。
+开发服务器会监听本地的8080端口。在浏览器中打开 http://localhost:8080，如果一切顺利，你就可以看到刚刚创建的 "Hello VuePress" 页面了。你随时可以按 Ctrl+C 关闭这个服务器。
 
 ## 部署至 GitHub Pages
 
@@ -158,7 +158,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-每次 push 到 main 分支时，该 workflow 就会被触发（也可以手动触发）。执行的操作是：在云端配置好 VuePress 所需要的环境，再执行 VuePress 的构建操作，编译 main 分支下的 Markdown 文档；随后，将编译好的静态资源（默认在`docs/.vuepress/dist/`目录下）push到 gh-pages 分支。
+每次 push 到 main 分支时，该 workflow 就会被触发（也可以手动触发）。执行的操作是：在云端配置好 VuePress 所需要的环境，再执行 VuePress 的构建操作，编译 main 分支下的 Markdown 文档；随后，将编译好的静态资源（默认在`docs/.vuepress/dist/`目录下）push 到 gh-pages 分支。
 
 将本地修改 push 到 GitHub，你会在 GitHub 仓库的 Action 标签下看到我们创建的 workflow，名字叫做 "Build Docs"，并且它已经开始自动执行了！如果没有，你可以手动执行。
 
@@ -176,10 +176,8 @@ remote: Permission to louix33/louix33.github.io.git denied to github-actions[bot
 
 另外，我们需要确保 Settings > Pages > Build and deployment 已经设置为 "Deploy from a branch"，并且指定 gh-pages 这个分支。
 
-完成上面的操作后，公网访问 \<username\>.github.io，如果能看到你之前创建的`index.md`的内容，就说明大功告成了！
+完成上面的操作后，从公网访问 \<username\>.github.io，如果能看到你之前创建的`index.md`的内容，就说明大功告成了！
 
 ## 后记
 
-本网站的源代码[在 GitHub 上开源](https://github.com/louix33/louix33.github.io)，并可作为这篇教程的参考。
-
-如有任何疑问或意见，欢迎提出 issue 或联系 louixliu@outlook.com。
+本网站的源代码[在 GitHub 上开源](https://github.com/louix33/louix33.github.io)，并可作为这篇教程的参考。如有任何疑问或意见，欢迎提出 issue。

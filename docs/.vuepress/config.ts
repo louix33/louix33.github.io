@@ -1,4 +1,4 @@
-import { defineUserConfig } from 'vuepress'
+import { defineUserConfig, defaultTheme } from 'vuepress'
 
 export default defineUserConfig({
     // site-level locales config
@@ -14,4 +14,18 @@ export default defineUserConfig({
         description: 'just for fun ^_^',
       },
     },
+    theme: defaultTheme({
+      // 侧边索引栏
+      sidebar: {
+        '/zh/blog':[
+          {
+            text: '博客',
+            children:[
+              '/zh/blog/index.md',
+              '/zh/blog/deploy-vuepress.md',
+            ]
+          }
+        ]
+      }
+    }),
   })
