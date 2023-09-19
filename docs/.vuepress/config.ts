@@ -1,5 +1,4 @@
-import { defineUserConfig } from 'vuepress'
-import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig, defaultTheme } from 'vuepress'
 
 export default defineUserConfig({
     // site-level locales config
@@ -16,9 +15,9 @@ export default defineUserConfig({
       },
     },
     theme: defaultTheme({
-      // 在这里进行配置
+      // 侧边索引栏
       sidebar: {
-        '/zh/blog/':[
+        '/zh/blog':[
           {
             text: '博客',
             children:[
