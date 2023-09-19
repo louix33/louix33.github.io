@@ -15,17 +15,41 @@ export default defineUserConfig({
       },
     },
     theme: defaultTheme({
-      // 侧边索引栏
-      sidebar: {
-        '/zh/blog':[
-          {
-            text: '博客',
-            children:[
-              '/zh/blog/index.md',
-              '/zh/blog/deploy-vuepress.md',
+      // 语言显示名称
+      locales: {
+        '/': {
+          selectLanguageName: 'English',
+          // 顶部导航栏
+          navbar: [
+            {
+              text: 'Blog',
+              link: '/blog/',
+            }
+          ],
+        },
+        '/zh/': {
+          selectLanguageName: '简体中文',
+          // 侧边索引栏
+          sidebar: {
+            '/zh/blog':[
+              {
+                text: '博客',
+                children:[
+                  '/zh/blog/index.md',
+                  '/zh/blog/deploy-vuepress.md',
+                ]
+              }
             ]
-          }
-        ]
+          },
+
+          // 顶部导航栏
+          navbar: [
+            {
+              text: '博客',
+              link: '/zh/blog/',
+            }
+          ],
+        },
       }
     }),
   })
